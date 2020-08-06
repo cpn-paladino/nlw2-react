@@ -25,8 +25,7 @@ function TeacherList() {
            </PageHeader>
            <main>
                <TeacherItem />
-               <TeacherItem />
-               <TeacherItem />
+        
            </main>
        </div>
     )

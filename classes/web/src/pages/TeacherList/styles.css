@@ -3,8 +3,6 @@
     height: 100vh;
 }
 
-
-
 #search-teachers{
     margin-top: 3.2rem;
 }
@@ -12,8 +10,6 @@
 #search-teachers label{
     color: var(--color-text-in-primary);
 }
-
-
 
 #search-teachers .input-block{
     position: relative;
