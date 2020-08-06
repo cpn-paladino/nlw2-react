@@ -1,9 +1,11 @@
 import express from 'express';
+import routes from './routes';
 
 const app = express();
 
 app.use(express.json());
-
+app.use(routes);
+app.listen(3333);
 
 //GET
 //POST
@@ -14,11 +16,6 @@ app.use(express.json());
 //Route Params: Identificar qual recurso eu quero atualizar ou deletar
 //Query Params: Paginacao, filtros, ordenação
 
-app.get('/', (request, response)=>{
 
-    return response.json({message: "Hello World"});
-
-});
 
 //http://localhost:3333/users
-app.listen(3333);
