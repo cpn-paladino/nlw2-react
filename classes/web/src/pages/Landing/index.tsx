@@ -21,7 +21,7 @@ function Landing(){
                         <img src={studyIcon} alt="Estudar"/>
                         Estudar
                     </Link>
-                    <Link to="/study-classes" className="give-classes">
+                    <Link to="/give-classes" className="give-classes">
                         <img src={studyIcon} alt="Dar aulas"/>
                         Dar aulas
                     </Link>
