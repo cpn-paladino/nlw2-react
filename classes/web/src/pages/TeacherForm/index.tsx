@@ -27,7 +27,15 @@ function TeacherForm() {
                 <fieldset>
                     <legend>Sobre a aula                      
                     </legend>
-                    <Select name="subject" label="Matéria" />
+                    <Select name="subject"
+                     label="Matéria"
+                     options={[
+                         {value: 'Python', label: 'Python' },
+                         {value: 'Frontend', label: 'Frontend' },
+                         {value: 'Matemática', label: 'Matemática' },
+
+                         ]}
+                      />
                     <Input name="cost" label="Custo da sua hora por aula" />
                 </fieldset>
                 <footer>                    
