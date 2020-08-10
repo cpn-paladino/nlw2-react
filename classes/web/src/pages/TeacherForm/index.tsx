@@ -5,9 +5,12 @@ import Input from '../../components/Input';
 import warningIcon from '../../assets/images/icons/warning.svg';
 import Textarea from '../../components/Textarea';
 import Select from '../../components/Select';
+import api from '../../services/api';
+import { useHistory } from 'react-router-dom';
+
 
 function TeacherForm() {
-
+    const history = useHistory();
     const [name, setName] = useState('');
     const [avatar, setAvatar] = useState('');
     const [whatsapp, setWhatsapp] = useState('');
@@ -31,17 +34,20 @@ function TeacherForm() {
 
     function handleCreateClass(e: FormEvent){
         e.preventDefault();
-        console.log(
-            {
-                name,
-                avatar,
-                whatsapp,
-                bio,
-                subject,
-                cost,
-                scheduleItems
-            }
-        );
+        api.post('classes', {
+            name,
+            avatar,
+            whatsapp,
+            bio,
+            subject,
+            cost: Number(cost),
+            schedule: scheduleItems
+        }).then(()=>{
+            alert('Cadastro ok!');
+            history.push('/');
+        }).catch(()=>{
+            alert('Erro no cadastro!');
+        })
     }
 
     function setScheduleItemValue(position:number, field: string, value:string) {
