@@ -37,8 +37,9 @@ function TeacherItem() {
           </Text>
 
           <View style={styles.buttonsContainer}>
-                <RectButton style={styles.favoriteButton}>
-                    <Image source={heartOutlineIcon}></Image>
+                <RectButton style={[styles.favoriteButton, styles.favorited]}>
+                    {/*<Image source={heartOutlineIcon}></Image>*/}
+                    <Image source={unfavoriteIcon}></Image>                    
                 </RectButton>
                 <RectButton style={styles.contactButton}>
                     <Image source={whatsappIcon}></Image>
@@ -46,11 +47,6 @@ function TeacherItem() {
                         Entrar em contato
                     </Text>
                 </RectButton>
-
-                <RectButton style={styles.favoriteButton}>
-                    <Image source={heartOutlineIcon}></Image>
-                </RectButton>
-                
           </View>          
       </View>          
     </View>
