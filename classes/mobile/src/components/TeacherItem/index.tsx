@@ -9,6 +9,7 @@ import styles from "./styles";
 import { RectButton } from "react-native-gesture-handler";
 
 import AsyncStorage from '@react-native-community/async-storage';
+import api from "../../services/api";
 
 export interface Teacher{
   id: number,
@@ -30,6 +31,10 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited})=> {
   const [isFavorited, setIsFavorited] = useState(favorited);
 
   function handleLinkToWhatsapp() {
+
+    api.post('connections', {
+      user_id: teacher.id,
+    })
     Linking.openURL(`whatsapp://send?phone=${teacher.whatsapp}`)
   }
 
@@ -49,7 +54,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited})=> {
         });
       favoritesArray.splice(favoritedIndex, 1);
       setIsFavorited(false);
-      
+
     }else{
       //adicionar aos favoritos
 
