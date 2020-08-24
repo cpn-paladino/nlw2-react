@@ -29,12 +29,10 @@ function TeacherList() {
                     const favoritedTeachersIds = favoritedTeachers.map(
                         (teacher:Teacher) => {
                             return teacher.id;
-                        }
-                    )
+                        })
                     setFavorites(favoritedTeachersIds);
                 }
-            }
-        );
+        });
     }
 
     function handleToggleFiltersVisible() {
