@@ -57,14 +57,10 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited})=> {
 
     }else{
       //adicionar aos favoritos
-
       favoritesArray.push(teacher); 
-
-      setIsFavorited(true);
-      await AsyncStorage.setItem('favorites', JSON.stringify(favoritesArray));
-
-
+      setIsFavorited(true);      
     }
+    await AsyncStorage.setItem('favorites', JSON.stringify(favoritesArray));
   }
  
   return (

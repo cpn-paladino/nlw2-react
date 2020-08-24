@@ -22,8 +22,7 @@ function TeacherList() {
     const [time, setTime] = useState('');
 
     function loadFavorites() {
-        AsyncStorage.getItem('favorites').then(
-            response => {
+        AsyncStorage.getItem('favorites').then(response => {
                 if(response){
 
                     const favoritedTeachers = JSON.parse(response);
@@ -34,7 +33,8 @@ function TeacherList() {
                     )
                     setFavorites(favoritedTeachersIds);
                 }
-            });
+            }
+        );
     }
 
     function handleToggleFiltersVisible() {
